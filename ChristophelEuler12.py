@@ -8,17 +8,14 @@ def triangularNumber(n):
 
 def positiveFactors(n):
     if (isinstance(n, int)):
-        if n == 1:
-            return [1]
-        else:
-            n = abs(n)
-            factors = []
-            for i in range(1, int(round(n**(1.0/2)))+1):
-                if n % i == 0:
-                    factors.append(i)
-                    pair = n/i
-                    if pair != i:
-                        factors.append(n/i)
+        n = abs(n)
+        factors = []
+        for i in range(1, int(round(n**(1.0/2)))+1):
+            if n % i == 0:
+                factors.append(i)
+                pair = n/i
+                if pair != i:
+                    factors.append(n/i)
         return factors
 
 def firstTriangularNumberWithNFactors(n):
@@ -32,8 +29,7 @@ def firstTriangularNumberWithNFactors(n):
                 maxLength = numFactors
                 print(maxLength)
             count += 1
-        else:
-            break
+        else: break
     print(str(triangle) + ' is triangular number #' + str(count) + ' and has ' + 
       str(numFactors) + ' divisors, making it the first triangular number with ' + str(n) + ' or more divisors.')
 
